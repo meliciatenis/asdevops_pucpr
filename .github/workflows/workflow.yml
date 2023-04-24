@@ -1,26 +1,30 @@
-name: Python pipeline
+name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+
+  pull_request:
+    branches: ["main"]
 
 jobs:
-  build:
+  build-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Build
-        run: python3 --version
-      - name: Test
-        run: python3 script.py
-      - name: Deploy
-        run: echo "hello world!"
+      - uses: actions/checkout@v2
+      - run: python3 --version
 
-      - name: Send Telegram Notification
-        uses: appleboy/telegram-action@master
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: python3 script.py
+      - uses: AppThreat/sast-scan-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: 'mensaje enviado'
+          type: 'python'
+  
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "finalizado!"
