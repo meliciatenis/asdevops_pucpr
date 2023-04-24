@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ngix:alpine
 
 RUN apt-get update
 RUN apt-get install nginx -y
