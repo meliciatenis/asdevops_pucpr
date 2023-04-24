@@ -21,8 +21,9 @@ jobs:
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v2
-      - run: script.js
-      - uses: AppThreat/sast-scan-action@master
+      - name: Ejecutar script.js
+        run: node script.js
+      - name: Escanear con AppThreat/sast-scan-action
+        uses: AppThreat/sast-scan-action@master
         with:
           type: "nodejs"
-  
