@@ -1,8 +1,13 @@
-FROM python:latest
+FROM ubuntu:latest
+
+RUN apt-get update
+RUN apt-get install nginx -y
 
 RUN mkdir /app
 WORKDIR /app
 
-COPY script.py ./
+COPY index.html /var/www/html
+COPY script.js /var/www/html
 
-CMD ["python", "script.py"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
