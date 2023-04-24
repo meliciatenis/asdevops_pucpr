@@ -22,7 +22,7 @@ jobs:
       - name: Checkout del repositorio
         uses: actions/checkout@v2
       - name: Ejecutar html
-        run: node index.html
+        run: https://meliciatenis.github.io/asdevops_pucpr/index.html
       - name: Escanear con AppThreat/sast-scan-action
         uses: AppThreat/sast-scan-action@master
         with:
