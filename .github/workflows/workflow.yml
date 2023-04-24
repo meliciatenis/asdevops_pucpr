@@ -23,8 +23,3 @@ jobs:
         with:
           type: 'python'
   
-  deploy-job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: echo "finalizado!"
