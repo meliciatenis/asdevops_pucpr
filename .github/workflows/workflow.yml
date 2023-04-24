@@ -21,9 +21,15 @@ jobs:
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v2
-      - name: Ejecutar html
-        run: https://meliciatenis.github.io/asdevops_pucpr/index.html
-      - name: Escanear con AppThreat/sast-scan-action
-        uses: AppThreat/sast-scan-action@master
+      - uses: AppThreat/sast-scan-action@master
         with:
           type: "nodejs"
+  
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build e Run no docker
+      - run: docker build -t imagem-asdevops:latest
+      - run: docker run imagem-asdevops:latest
+      - run: echo "finalizado!"
