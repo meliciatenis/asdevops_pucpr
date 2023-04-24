@@ -28,6 +28,6 @@ jobs:
       - name: Send Telegram Notification
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: 'WQBThB1dk89iNzRh'
+          token: '5935850584:AAHYhcfBp5Bg-JDOANiyVhenzLiKKIgJH9A'
           message: 'Pull Request ${{ github.event.pull_request.number }} is ${{ github.event.action }}'
