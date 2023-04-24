@@ -1,0 +1,25 @@
+{
+  "name": "siteInstitucional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u001b[A\u001b[A\u001b[A\u001b[B\u001b[B\u001b[B\u001b[B\u001b[B"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.41.1"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
