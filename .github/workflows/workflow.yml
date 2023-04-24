@@ -16,3 +16,13 @@ jobs:
       - name: Verificar versión de Node.js
         run: node --version
 
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+      - run: index.html
+      - uses: AppThreat/sast-scan-action@master
+        with:
+          type: "nodejs"
+  
