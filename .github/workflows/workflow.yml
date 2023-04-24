@@ -32,9 +32,6 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
-        run: pip install appleboy-telegram-actions
-
       - name: Send Telegram Notification
         uses: appleboy/telegram-action@master
         with:
